@@ -10,7 +10,7 @@ services:
     name: inventory_qr
     runtime: python
     buildCommand: './build.sh'
-    startCommand: 'python -m gunicorn inventory_qr.asgi:application -k uvicorn.workers.UvicornWorker' 
+    startCommand: 'python -m gunicorn container_qr.asgi:application -k uvicorn.workers.UvicornWorker' 
     envVars:
       - key: DATABASE_URL
         fromDatabase:
