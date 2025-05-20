@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Create New Container{% endblock %}
+{% block content %}
+
+<h1 class="mb-4">Create a New Container</h1>
+
+<form method="post" class="mb-3">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Create Container</button>
+</form>
+
+<a href="/" class="btn btn-link">Back to Home</a>
+
+{% endblock %}
