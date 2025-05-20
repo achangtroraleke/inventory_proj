@@ -51,6 +51,7 @@ def create_container(request):
     
     return render(request, 'create_container.html', {'form': form})
 
+
 def home(request):
-    containers = Container.objects.all()
+    containers = Container.objects.all() or []  # Ensures an empty list if none found
     return render(request, 'home.html', {'containers': containers})
