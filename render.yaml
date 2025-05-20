@@ -7,10 +7,10 @@ databases:
 services:
   - type: web
     plan: free
-    name: inventory_qr
+    name: inventory_proj
     runtime: python
     buildCommand: './build.sh'
-    startCommand: 'python -m gunicorn inventory_qr.asgi:application -k uvicorn.workers.UvicornWorker' 
+    startCommand: 'python -m gunicorn inventory_proj.asgi:application -k uvicorn.workers.UvicornWorker' 
     envVars:
       - key: DATABASE_URL
         fromDatabase:
