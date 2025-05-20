@@ -86,10 +86,15 @@ WSGI_APPLICATION = 'container_qr.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+    'default': dj_database_url.config(
+    # Replace this value with your local database's connection string.
+    default='postgresql://inventory_qr_db:ZqqEUVmA52b8JevefVGV0oy0S89v4zJV@dpg-d0m311juibrs7383vbu0-a/inventory_qr_db',
+    conn_max_age=600
+)
 }
 
 
