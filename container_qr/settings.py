@@ -26,9 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e_#ko+e_x)umq@94#(!t&u+_c6$!1%_hcx)wg#idnb7okp76m&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://inventory-qr.onrender.com/',  # Replace with your actual Render URL
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
