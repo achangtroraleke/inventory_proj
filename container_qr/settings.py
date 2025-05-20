@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e_#ko+e_x)umq@94#(!t&u+_c6$!1%_hcx)wg#idnb7okp76m&'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -92,7 +92,7 @@ DATABASES = {
     # }
     'default': dj_database_url.config(
     # Replace this value with your local database's connection string.
-    default='postgresql://inventory_qr_db:ZqqEUVmA52b8JevefVGV0oy0S89v4zJV@dpg-d0m311juibrs7383vbu0-a/inventory_qr_db',
+    default=os.environ.get('DATABASE_URL'),
     conn_max_age=600
 )
 }
