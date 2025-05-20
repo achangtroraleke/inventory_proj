@@ -53,5 +53,8 @@ def create_container(request):
 
 
 def home(request):
-    containers = Container.objects.all() or []  # Ensures an empty list if none found
+    try:
+        containers = Container.objects.all()
+    except Exception:
+        containers = []
     return render(request, 'home.html', {'containers': containers})
