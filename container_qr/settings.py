@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
     'inventory-proj.onrender.com',  # Replace with your actual Render URL
     'localhost',
     '127.0.0.1',
+    'inventory-qr.onrender.com'
 ]
 
 
